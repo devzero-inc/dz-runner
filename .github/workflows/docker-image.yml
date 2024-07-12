@@ -13,4 +13,4 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: dz-runner:latest
+          tags: ghcr.io/devzero-inc/dz-runner:latest
