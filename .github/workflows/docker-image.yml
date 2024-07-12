@@ -1,6 +1,11 @@
 name: Docker Image CI
 on:
-  push:
+  workflow_dispatch:
+    inputs:
+      runner_version:
+        description: Runner version
+        type: string
+        required: true
 jobs:
   docker:
     runs-on: ubuntu-latest
@@ -19,4 +24,5 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: ghcr.io/${{ github.repository }}:${{ github.sha }},ghcr.io/${{ github.repository }}:latest
+          tags: ghcr.io/${{ github.repository }}:${{ inputs.runner_version }},ghcr.io/${{ github.repository }}:latest
+          build-args: RUNNER_VERSION=${{ inputs.runner_version }}
