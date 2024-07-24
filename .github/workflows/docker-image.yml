@@ -9,7 +9,7 @@ on:
 jobs:
   docker:
     runs-on: dz-runner-set
-    container: ubuntu:lts
+    container: docker.io/docker:20.10
     steps:
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
