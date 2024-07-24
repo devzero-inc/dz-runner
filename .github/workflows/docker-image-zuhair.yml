@@ -11,6 +11,9 @@ jobs:
     runs-on: dz-runner-set-zuhair
     container: ubuntu:latest
     steps:
+      - run: |
+          apt-get update && \
+          apt-get -y install sudo curl gpg
       - uses: docker-practice/actions-setup-docker@master
         timeout-minutes: 12
       - run: |
