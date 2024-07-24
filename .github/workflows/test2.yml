@@ -1,0 +1,8 @@
+name: Actions Runner Controller Test Zuhair
+on:
+  workflow_dispatch:
+jobs:
+  Explore-GitHub-Actions-Arc:
+    runs-on: dz-runner-set-zuhair
+    steps:
+    - run: echo "🎉 This job uses runner scale set runners!"
