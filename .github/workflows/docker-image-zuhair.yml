@@ -9,7 +9,7 @@ on:
 jobs:
   docker:
     runs-on: dz-runner-set-zuhair
-    container: docker.io/docker:20.10
+    container: ubuntu:latest
     steps:
       - uses: docker-practice/actions-setup-docker@master
         timeout-minutes: 12
