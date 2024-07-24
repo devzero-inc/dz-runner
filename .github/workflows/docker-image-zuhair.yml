@@ -11,6 +11,11 @@ jobs:
     runs-on: dz-runner-set-zuhair
     container: docker.io/docker:20.10
     steps:
+      - uses: docker-practice/actions-setup-docker@master
+        timeout-minutes: 12
+      - run: |
+          set -x
+          docker version
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
       - name: Set up Docker Buildx
