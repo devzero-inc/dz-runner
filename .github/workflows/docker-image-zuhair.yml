@@ -10,6 +10,8 @@ jobs:
   docker:
     runs-on: dz-runner-set-zuhair
     steps:
+      - run: |
+          sudo service docker start
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
       - name: Set up Docker Buildx
