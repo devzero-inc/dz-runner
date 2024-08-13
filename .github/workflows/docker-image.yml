@@ -9,15 +9,15 @@ on:
 jobs:
   docker:
     runs-on: ubuntu-latest # dz-runner-set
-    container: docker.io/docker:latest
-    services:
-      dind:
-        image: docker.io/docker:dind
-        options: "--entrypoint dockerd"
-        ports:
-          - 2375:2375
-    env:
-      DOCKER_HOST: "tcp://localhost:2375"
+    # container: docker.io/docker:latest
+    # services:
+    #   dind:
+    #     image: docker.io/docker:dind
+    #     options: "--entrypoint dockerd"
+    #     ports:
+    #        - 2375:2375
+    # env:
+    #   DOCKER_HOST: "tcp://localhost:2375"
     steps:
       # - name: Set up QEMU
       #   uses: docker/setup-qemu-action@v3
