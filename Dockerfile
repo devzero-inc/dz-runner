@@ -1,5 +1,6 @@
 # Source: https://github.com/dotnet/dotnet-docker
-FROM mcr.microsoft.com/dotnet/runtime-deps:6.0-jammy AS build
+# FROM mcr.microsoft.com/dotnet/runtime-deps:6.0-jammy AS build
+FROM summerwind/actions-runner-dind:latest AS build
 
 ARG TARGETOS=linux
 ARG TARGETARCH=amd64
