@@ -1,5 +1,5 @@
 # Source: https://github.com/dotnet/dotnet-docker
-FROM mcr.microsoft.com/dotnet/runtime-deps:6.0-jammy as build
+FROM mcr.microsoft.com/dotnet/runtime-deps:6.0-jammy AS build
 
 ARG TARGETOS=linux
 ARG TARGETARCH=amd64
@@ -44,6 +44,7 @@ RUN apt update -y \
     && apt install -y sudo lsb-release gpg-agent software-properties-common \
         git \
         build-essential \
+        jq \
     && rm -rf /var/lib/apt/lists/*
 
 # Configure git-core/ppa based on guidance here:  https://git-scm.com/download/linux
