@@ -1,12 +1,15 @@
 # Source: https://github.com/dotnet/dotnet-docker
-FROM mcr.microsoft.com/dotnet/runtime-deps:6.0-jammy as build
+# FROM mcr.microsoft.com/dotnet/runtime-deps:6.0-jammy AS build
+FROM summerwind/actions-runner-dind:latest AS build
 
 ARG TARGETOS=linux
 ARG TARGETARCH=amd64
-ARG RUNNER_VERSION=2.317.0
+ARG RUNNER_VERSION=2.319.0
 ARG RUNNER_CONTAINER_HOOKS_VERSION=0.6.1
 ARG DOCKER_VERSION=25.0.5
 ARG BUILDX_VERSION=0.15.1
+
+USER root
 
 RUN apt update -y && apt install curl unzip -y
 
@@ -44,6 +47,7 @@ RUN apt update -y \
     && apt install -y sudo lsb-release gpg-agent software-properties-common \
         git \
         build-essential \
+        jq \
     && rm -rf /var/lib/apt/lists/*
 
 # Configure git-core/ppa based on guidance here:  https://git-scm.com/download/linux
