@@ -8,7 +8,7 @@ on:
         required: true
 jobs:
   docker:
-    runs-on: dz-runner-set
+    runs-on: ubuntu-latest # dz-runner-set
     container: docker.io/docker:latest
     services:
       dind:
