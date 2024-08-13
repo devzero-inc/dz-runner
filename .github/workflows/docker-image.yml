@@ -1,11 +1,11 @@
 name: Docker Image CI
 on:
   workflow_dispatch:
-    inputs:
-      runner_version:
-        description: Runner version
-        type: string
-        required: true
+    # inputs:
+    #   runner_version:
+    #     description: Runner version
+    #     type: string
+    #     required: true
 jobs:
   docker:
     runs-on: ubuntu-latest # dz-runner-set
@@ -34,4 +34,4 @@ jobs:
         with:
           push: true
           tags: ghcr.io/${{ github.repository }}:${{ inputs.runner_version }},ghcr.io/${{ github.repository }}:latest
-          build-args: RUNNER_VERSION=${{ inputs.runner_version }}
+          # build-args: RUNNER_VERSION=${{ inputs.runner_version }}
